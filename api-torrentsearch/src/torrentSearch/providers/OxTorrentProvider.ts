@@ -63,7 +63,7 @@ class OxTorrentProvider implements ITorrentProvider {
                     Size: size,
                     Seeders: seeders,
                     Leechers: leechers,
-                    Link: btoa(new URL(link, this.baseUrl).toString()),
+                    Link: new URL(link, this.baseUrl).toString(),
                 };
         
                 torrentList.push(torrent);

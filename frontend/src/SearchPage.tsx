@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Download, Clipboard, CheckCircle } from 'lucide-react';
 
 interface GetResultResponse {
@@ -9,8 +9,10 @@ interface GetResultResponse {
   Link: string;
 }
 
-interface DownloadResponse {
-  magnetUrl: string;
+interface TorrentDownloadResponse {
+  name: string;
+  pageLink: string;
+  progress: number;
 }
 
 const SearchPage: React.FC = () => {
@@ -18,8 +20,9 @@ const SearchPage: React.FC = () => {
   const [results, setResults] = useState<GetResultResponse[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [modalContent, setModalContent] = useState<string>('');
+  const [modalSuccess, setModalSuccess] = useState<boolean>(false);
   const [copied, setCopied] = useState<boolean>(false);
+  const [progressData, setProgressData] = useState<TorrentDownloadResponse[]>([]);
 
   const handleSearch = async () => {
     setLoading(true);
@@ -45,20 +48,50 @@ const SearchPage: React.FC = () => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      const result: DownloadResponse = await response.json();
-      setModalContent(result.magnetUrl);
+      const result: { magnetUrl: string } = await response.json();
+      setModalSuccess(true);
+
+      // Automatically close the modal 2 seconds after the end of the API call
+      setTimeout(() => {
+        setModalOpen(false);
+        setModalSuccess(false);
+      }, 2000);
     } catch (error) {
-      setModalContent("There was an error downloading the torrent.");
+      setModalSuccess(false);
+      console.error("There was an error downloading the torrent.", error);
     } finally {
       setLoading(false);
     }
   };
 
+  const fetchProgress = async () => {
+    try {
+      const response = await fetch('http://localhost:4445/api/torrents');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data: TorrentDownloadResponse[] = await response.json();
+      setProgressData(data);
+    } catch (error) {
+      console.error("There was an error fetching the progress data!", error);
+    }
+  };
+
+  useEffect(() => {
+    const interval = setInterval(fetchProgress, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   const handleCopy = () => {
-    navigator.clipboard.writeText(modalContent).then(() => {
+    navigator.clipboard.writeText("Copied text").then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
     });
+  };
+
+  const getProgress = (link: string) => {
+    const match = progressData.find(item => item.pageLink === link);
+    return match ? match.progress : 0;
   };
 
   return (
@@ -128,7 +161,7 @@ const SearchPage: React.FC = () => {
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                   {results.map((result) => (
-                    <tr key={result.Link}>
+                    <tr key={result.Link} className="relative">
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                         <a href={result.Link} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-900">
                           {result.Title}
@@ -142,6 +175,7 @@ const SearchPage: React.FC = () => {
                           <Download className="h-5 w-5" />
                         </button>
                       </td>
+                      <td className="absolute inset-x-0 bottom-0 h-2 bg-indigo-600" style={{ width: `${getProgress(result.Link)}%` }}></td>
                     </tr>
                   ))}
                 </tbody>
@@ -160,8 +194,9 @@ const SearchPage: React.FC = () => {
                 <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-32 w-32"></div>
               </div>
             ) : (
-              <div className="text-sm text-gray-900 whitespace-pre-wrap">
-                {modalContent}
+              <div className="flex flex-col items-center">
+                <CheckCircle className="h-12 w-12 text-green-500" />
+                <div className="text-sm text-gray-900 mt-4">Download Successful</div>
               </div>
             )}
             <div className="mt-4 flex justify-end space-x-2">

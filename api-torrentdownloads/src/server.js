@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import { TorrentService } from './TorrentService.js';
 
 dotenv.config();
@@ -8,6 +9,12 @@ const torrentService = new TorrentService();
 
 const app = express();
 app.use(express.json());
+app.use(cors({
+    origin: 'http://localhost:4444',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 204
+}));
 
 app.get('/api/torrents', (req, res) => {
     const torrents = torrentService.getTorrents();
@@ -15,8 +22,8 @@ app.get('/api/torrents', (req, res) => {
 });
 
 app.post('/api/torrents', async (req, res) => {
-    const { magnetLink, outputDir } = req.body;
-    const torrent = await torrentService.addTorrent(magnetLink, process.env.DOWNLOAD_PATH);
+    const { magnetLink, pageLink } = req.body;
+    const torrent = await torrentService.addTorrent(magnetLink, pageLink, process.env.DOWNLOAD_PATH);
     res.status(201).json(torrent);
 });
 
