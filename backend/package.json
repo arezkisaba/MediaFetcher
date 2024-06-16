@@ -1,0 +1,17 @@
+{
+    "name": "mediafetcher-backend",
+    "version": "0.1.0",
+    "author": "Arezki Saba",
+    "license": "ISC",
+    "description": "Small docker container with a torrent download api based on node.js server ",
+    "type": "module",
+    "scripts": {
+        "start": "node src/server.js"
+    },
+    "keywords": [],
+    "dependencies": {
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "webtorrent": "^2.4.1"
+    }
+}
