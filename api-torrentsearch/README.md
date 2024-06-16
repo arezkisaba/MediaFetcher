@@ -4,9 +4,8 @@
 mkdir api-torrentsearch
 cd api-torrentsearch
 npm init -y
-npm install typescript ts-node @types/node --save-dev
-npm install express
-npm install @types/express --save-dev
+npm install express typescript ts-node node-fetch xml2js tsyringe reflect-metadata
+npm install @types/express @types/xml2js @types/node --save-dev
 npx tsc --init
 mkdir src
 touch src/index.ts src/app.ts src/routes.ts

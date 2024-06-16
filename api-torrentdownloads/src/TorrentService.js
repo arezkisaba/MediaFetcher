@@ -14,7 +14,6 @@ export class TorrentService {
             return items;
         } catch (error) {
             console.error(`Error while returning torrents`);
-            reject(error);
         }
     };
 

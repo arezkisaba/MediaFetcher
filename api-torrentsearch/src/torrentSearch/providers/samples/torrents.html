@@ -1,0 +1,766 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+      <title>star wars the acolyte - OxTorrent.co</title>
+      <meta name="description" content="OxTorrent - Téléchargement de Films, Séries, Musiques, Logiciels, Jeux, Ebooks" />
+      <meta name="keywords" content="oxtorrent, telecharger, telechargement, download, free, torrent, torrente, torrents, series, films, dvdrip, bdrip, xvid, divx, x264, gratuit, gratuitement, exclue, exclus, french, truefrench, logiciels, jeux, musique, album, mangas, ebook, spectacle, francais, bluray, 1080p, 720p, vostfr, vfstfr, dvdscr, mp3" />
+      <meta http-equiv="Content-Language" content="fr-fr" />
+      <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+      <link href="/static/css/style.css" rel="stylesheet">
+      <link href="/static/css/bootstrap.css" rel="stylesheet">
+      <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+      <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+      <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+      <style>
+         .listing-torrent{overflow: hidden;}
+         .listing-detail{overflow: hidden;}
+         .main-wrap{float: left;width: 74%;}
+         .base-block{width: 100%}
+         .block-detail{width: 100%}
+         .bloc-torrent{position: relative;margin-left: 0;float: right;}
+         .table{width: 100%}
+         .torent-nav{display: none}
+         #trier{margin: 0}
+         @media (max-width: 767px) {
+         #conteneur{width: 100%;}
+         #header{width: 100%;}
+         #contenu{width: 100%}
+         #ariane{width: 100%;height: auto;margin-top: 5px}
+         .main-wrap{width: 100%;}
+         .bloc-torrent{width: 100%}
+         .block-detail{height: auto}
+         #header .torent-nav{display: block;background: 0 0;margin: 0;min-height: auto;}
+         #header .torent-nav li{width: 100%;display: block;float: none;text-align: center;}
+         #menu{display: none}
+         .torent-nav .navbar-collapse{width: 100%;background: #393939;}
+         .navbar-default .navbar-nav>li>a{color: #b3b3b3}
+         .col-md-4{width: 100%;}
+         .col-md-offset-2{margin-left: 0}
+         .col-md-4 .dropdown{float: left;}
+         .cover{margin: 11px 0 11px 0;width: 50%;}
+         .listing-torrent{padding: 1px 7px 7px;}
+         .listing-detail {padding: 1px 7px;}
+         #torrentsimage img {display: block;margin: 0 auto 5px auto;float: none;}
+         #torrentsdesc p{word-break: break-all;}
+         .table td{word-break: break-all!important;}
+         .container{padding-top: 25px}
+         }
+      </style>
+   </head>
+   <body>
+      <div id="conteneur">
+         <div id="header">
+            <h1><a href="/" id="logo"><img src="/static/img/logo.png" alt="oxtorrent"></a></h1>
+            <form class="form" method="POST" action="/search_torrent">
+               <div class="recherche">
+                  <input type="text" name="torrentSearch" placeholder="Recherche..." value="star wars the acolyte" maxlength="49" required>
+                  <button type="submit"><i class="fa fa-search "></i>
+                  </button>
+               </div>
+            </form>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="z-index:99;color:#dedede;background:#2e2e2e;font-size:20px;float: left;margin: 0;padding: 0 15px;">
+            <i class="fa fa-bars"></i>
+            </button>
+            <div class="container">
+               <div id="menu">
+                  <ul class="arbo">
+                     <li><a href="/" title="Accéder à l'accueil"><i class="fa fa-home" style="font-size:18px"></i></a></li>
+                     <li> <a href="/torrents/films" title="Accéder aux Films">Films</a></li>
+                     <li> <a href="/torrents/series" title="Accéder aux Séries">Séries</a></li>
+                     <li> <a href="/torrents/musique" title="Accéder aux Musiques">Musique</a></li>
+                     <li> <a href="/torrents/ebook" title="Accéder aux Ebooks">Ebook</a></li>
+                     <li> <a href="/torrents/logiciels" title="Accéder aux Logiciels">Logiciels</a></li>
+                     <li> <a href="/torrents/jeux-pc" title="Accéder aux Jeux">Jeux PC</a></li>
+                     <li> <a href="/torrents/jeux-consoles" title="Accéder aux Jeux">Jeux Consoles</a></li>
+                     <li> <a href="/top" title="Accéder aux top 100">Top 100</a></li>
+                  </ul>
+               </div>
+               <nav class="navbar navbar-default torent-nav" style="border:0;">
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                     <ul class="nav navbar-nav">
+                        <li> <a href="/torrents/films" title="Accéder aux Films">Films</a></li>
+                        <li> <a href="/torrents/series" title="Accéder aux Séries">Séries</a></li>
+                        <li> <a href="/torrents/musique" title="Accéder aux Musiques">Musique</a></li>
+                        <li> <a href="/torrents/ebook" title="Accéder aux Ebooks">Ebook</a></li>
+                        <li> <a href="/torrents/logiciels" title="Accéder aux Logiciels">Logiciels</a></li>
+                        <li> <a href="/torrents/jeux-pc" title="Accéder aux Jeux">Jeux PC</a></li>
+                        <li> <a href="/torrents/jeux-consoles" title="Accéder aux Jeux">Jeux Consoles</a></li>
+                        <li> <a href="/top" title="Accéder aux top 100">Top 100</a></li>
+                     </ul>
+                  </div>
+               </nav>
+               <div id="ariane">
+                  <a href="/" title="Accueil">Accueil</a> › Recherche › <a href>star wars the acolyte</a>
+               </div>
+               <div id="contenu">
+                  <div class="listing-torrent">
+                     <div class="main-wrap">
+                        <h2 style="margin-bottom:14px;"><i class="fa fa-search"></i> <a href="/top">Recherche</a></h2>
+                        <div style="border:1px solid #c3c3c3; background:#f6f6f6; width:100%; margin-bottom:14px; border-radius:4px; padding:15px">
+                           <fieldset>
+                              <legend>Filtres <small><i class="fa fa-check colorChecked"></i> <a href="/recherche/star-wars-the-acolyte" style="font-weight:bold">Tout afficher</a></small> </legend>
+                              <div class="row">
+                                 <div class="col-xs-6 col-md-4 col-lg-3">
+                                    <i class="fa fa-square-o colorChecked"></i> <a href="/recherche/films/star-wars-the-acolyte">Films</a>
+                                 </div>
+                                 <div class="col-xs-6 col-md-4 col-lg-3">
+                                    <i class="fa fa-square-o colorChecked"></i> <a href="/recherche/1080p/star-wars-the-acolyte">Films BluRay 1080p</a>
+                                 </div>
+                                 <div class="col-xs-6 col-md-4 col-lg-3">
+                                    <i class="fa fa-square-o colorChecked"></i> <a href="/recherche/series/star-wars-the-acolyte">Séries TV</a>
+                                 </div>
+                                 <div class="col-xs-6 col-md-4 col-lg-3">
+                                    <i class="fa fa-square-o colorChecked"></i> <a href="/recherche/musique/star-wars-the-acolyte">Musiques</a>
+                                 </div>
+                                 <div class="col-xs-6 col-md-4 col-lg-3">
+                                    <i class="fa fa-square-o colorChecked"></i> <a href="/recherche/films-french/star-wars-the-acolyte">Films FRENCH</a>
+                                 </div>
+                                 <div class="col-xs-6 col-md-4 col-lg-3">
+                                    <i class="fa fa-square-o colorChecked"></i> <a href="/recherche/720p/star-wars-the-acolyte">Films BluRay 720p</a>
+                                 </div>
+                                 <div class="col-xs-6 col-md-4 col-lg-3">
+                                    <i class="fa fa-square-o colorChecked"></i> <a href="/recherche/series-francaise/star-wars-the-acolyte">Séries TV FRENCH</a>
+                                 </div>
+                                 <div class="col-xs-6 col-md-4 col-lg-3">
+                                    <i class="fa fa-square-o colorChecked"></i> <a href="/recherche/logiciels/star-wars-the-acolyte">Logiciels</a>
+                                 </div>
+                                 <div class="col-xs-6 col-md-4 col-lg-3">
+                                    <i class="fa fa-square-o colorChecked"></i> <a href="/recherche/films-vostfr/star-wars-the-acolyte">Films VOSTFR</a>
+                                 </div>
+                                 <div class="col-xs-6 col-md-4 col-lg-3">
+                                    <i class="fa fa-square-o colorChecked"></i> <a href="/recherche/films-dvdrip-x264/star-wars-the-acolyte">Films DVDRIP .x264</a>
+                                 </div>
+                                 <div class="col-xs-6 col-md-4 col-lg-3">
+                                    <i class="fa fa-square-o colorChecked"></i> <a href="/recherche/series-vostfr/star-wars-the-acolyte">Séries TV VOSTFR</a>
+                                 </div>
+                                 <div class="col-xs-6 col-md-4 col-lg-3">
+                                    <i class="fa fa-square-o colorChecked"></i> <a href="/recherche/jeux-pc/star-wars-the-acolyte">Jeux PC</a>
+                                 </div>
+                                 <div class="col-xs-6 col-md-4 col-lg-3">
+                                    <i class="fa fa-square-o colorChecked"></i> <a href="/recherche/films-dvdrip/star-wars-the-acolyte">Films DVDRIP .avi</a>
+                                 </div>
+                                 <div class="col-xs-6 col-md-4 col-lg-3">
+                                    <i class="fa fa-square-o colorChecked"></i> <a href="/recherche/spectacles/star-wars-the-acolyte">Spectacles</a>
+                                 </div>
+                                 <div class="col-xs-6 col-md-4 col-lg-3">
+                                    <i class="fa fa-square-o colorChecked"></i> <a href="/recherche/ebook/star-wars-the-acolyte">Ebooks</a>
+                                 </div>
+                                 <div class="col-xs-6 col-md-4 col-lg-3">
+                                    <i class="fa fa-square-o colorChecked"></i> <a href="/recherche/jeux-consoles/star-wars-the-acolyte">Jeux consoles</a>
+                                 </div>
+                              </div>
+                           </fieldset>
+                        </div>
+                        <table class="table table-hover">
+                           <tbody>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/114403/star-wars-the-acolyte-vostfr-s01e01-hdtv-2024" title="Star Wars : The Acolyte VOSTFR S01E01 HDTV 2024 en Torrent">Star Wars : The Acolyte VOSTFR S01E01 HDTV 2024</a></td>
+                                 <td width="11%" align="left">229.6 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">768
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">82
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/114421/star-wars-the-acolyte-french-s01e02-hdtv-2024" title="Star Wars : The Acolyte FRENCH S01E02 HDTV 2024 en Torrent">Star Wars : The Acolyte FRENCH S01E02 HDTV 2024</a></td>
+                                 <td width="11%" align="left">184.3 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">1107
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">66
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/114788/star-wars-the-acolyte-vostfr-s01e03-hdtv-2024" title="Star Wars : The Acolyte VOSTFR S01E03 HDTV 2024 en Torrent">Star Wars : The Acolyte VOSTFR S01E03 HDTV 2024</a></td>
+                                 <td width="11%" align="left">233.3 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">136
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">112
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/114420/star-wars-the-acolyte-french-s01e01-hdtv-2024" title="Star Wars : The Acolyte FRENCH S01E01 HDTV 2024 en Torrent">Star Wars : The Acolyte FRENCH S01E01 HDTV 2024</a></td>
+                                 <td width="11%" align="left">228.8 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">1087
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">66
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/114404/star-wars-the-acolyte-vostfr-s01e02-hdtv-2024" title="Star Wars : The Acolyte VOSTFR S01E02 HDTV 2024 en Torrent">Star Wars : The Acolyte VOSTFR S01E02 HDTV 2024</a></td>
+                                 <td width="11%" align="left">185.0 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">373
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">50
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/75833/star-wars-the-clone-wars-integral-multi-hdlight-1080p-hdtv" title="Star Wars: The Clone Wars (Integral) MULTI HDLight 1080p HDTV en Torrent">Star Wars: The Clone Wars (Integral) MULTI HDLight 1080p HDTV</a></td>
+                                 <td width="11%" align="left">33.1 GB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">223
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">279
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43691/star-wars-the-clone-wars-s04e22-final-french-hdtv" title="Star Wars The Clone Wars S04E22 FINAL FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E22 FINAL FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">152.7 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">3
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/70384/star-wars-the-clone-wars-s07e12-final-french-hdtv" title="Star Wars: The Clone Wars S07E12 FINAL FRENCH HDTV en Torrent">Star Wars: The Clone Wars S07E12 FINAL FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">185.4 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">167
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">12
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/70375/star-wars-the-clone-wars-s07e12-final-vostfr-hdtv" title="Star Wars: The Clone Wars S07E12 FINAL VOSTFR HDTV en Torrent">Star Wars: The Clone Wars S07E12 FINAL VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">186.5 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">43
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">3
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43777/star-wars-the-clone-wars-s04e13-french-hdtv" title="Star Wars The Clone Wars S04E13 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E13 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">179.9 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">3
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">1
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43861/star-wars-the-clone-wars-s04e11-french-hdtv" title="Star Wars The Clone Wars S04E11 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E11 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">179.5 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">3
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43862/star-wars-the-clone-wars-s04e10-french-hdtv" title="Star Wars The Clone Wars S04E10 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E10 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">178.8 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">2
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">3
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/39410/star-wars-the-clone-wars-s05e20-vostfr-hdtv" title="Star Wars The Clone Wars S05E20 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E20 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">174.1 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">1
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43920/star-wars-the-clone-wars-s04e09-french-hdtv" title="Star Wars The Clone Wars S04E09 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E09 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">178.9 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">2
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/39556/star-wars-the-clone-wars-s05e19-vostfr-hdtv" title="Star Wars The Clone Wars S05E19 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E19 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">174.8 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">2
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">2
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43922/star-wars-the-clone-wars-s04e08-french-hdtv" title="Star Wars The Clone Wars S04E08 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E08 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">179.8 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">2
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43860/star-wars-the-clone-wars-s04e12-french-hdtv" title="Star Wars The Clone Wars S04E12 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E12 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">179.5 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">3
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">2
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43923/star-wars-the-clone-wars-s04e07-french-hdtv" title="Star Wars The Clone Wars S04E07 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E07 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">179.3 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">2
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">3
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43982/star-wars-the-clone-wars-s04e05-french-hdtv" title="Star Wars The Clone Wars S04E05 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E05 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">186.7 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">2
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">3
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43978/star-wars-the-clone-wars-s04e06-french-hdtv" title="Star Wars The Clone Wars S04E06 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E06 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">186.9 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">2
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/40185/star-wars-the-clone-wars-s05e13-vostfr-hdtv" title="Star Wars The Clone Wars S05E13 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E13 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">175.6 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">2
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">3
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/46284/star-wars-the-clone-wars-s01e01-02-french-hdtv" title="Star Wars The Clone Wars S01E01-02 FRENCH HDTV en Torrent">Star Wars The Clone Wars S01E01-02 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">359.1 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">3
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/46281/star-wars-the-clone-wars-s01e03-04-05-french-hdtv" title="Star Wars The Clone Wars S01E03-04-05 FRENCH HDTV en Torrent">Star Wars The Clone Wars S01E03-04-05 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">540.4 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">5
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">4
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/46272/star-wars-the-clone-wars-s01e06-10-french-hdtv" title="Star Wars The Clone Wars S01E06-10 French HDTV en Torrent">Star Wars The Clone Wars S01E06-10 French HDTV</a></td>
+                                 <td width="11%" align="left">880.6 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">5
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">2
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/46254/star-wars-the-clone-wars-s01e21-22-french-hdtv" title="Star Wars The Clone Wars S01E21-22 FRENCH HDTV en Torrent">Star Wars The Clone Wars S01E21-22 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">382.0 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">5
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">3
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/44053/star-wars-the-clone-wars-s04e01-french-hdtv" title="Star Wars The Clone Wars S04E01 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E01 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">176.5 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">5
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">3
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/44051/star-wars-the-clone-wars-s04e03-french-hdtv" title="Star Wars The Clone Wars S04E03 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E03 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">176.4 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">2
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">2
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43983/star-wars-the-clone-wars-s04e04-french-hdtv" title="Star Wars The Clone Wars S04E04 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E04 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">179.9 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">3
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">3
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/39613/star-wars-the-clone-wars-s05e18-vostfr-hdtv" title="Star Wars The Clone Wars S05E18 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E18 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">175.4 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">1
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/39658/star-wars-the-clone-wars-s05e17-vostfr-hdtv" title="Star Wars The Clone Wars S05E17 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E17 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">175.1 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">2
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">2
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/41351/star-wars-the-clone-wars-s05e03-vostfr-hdtv" title="Star Wars The Clone Wars S05E03 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E03 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">173.5 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">1
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/41499/star-wars-the-clone-wars-s05e02-vostfr-hdtv" title="Star Wars The Clone Wars S05E02 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E02 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">173.5 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">1
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/41612/star-wars-the-clone-wars-s05e01-vostfr-hdtv" title="Star Wars The Clone Wars S05E01 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E01 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">175.5 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">1
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43709/star-wars-the-clone-wars-s04e21-french-hdtv" title="Star Wars The Clone Wars S04E21 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E21 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">180.0 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">4
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43710/star-wars-the-clone-wars-s04e20-french-hdtv" title="Star Wars The Clone Wars S04E20 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E20 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">179.8 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">3
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43711/star-wars-the-clone-wars-s04e19-french-hdtv" title="Star Wars The Clone Wars S04E19 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E19 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">180.2 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">3
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43732/star-wars-the-clone-wars-s04e18-french-hdtv" title="Star Wars The Clone Wars S04E18 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E18 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">181.7 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">4
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">3
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43733/star-wars-the-clone-wars-s04e17-french-hdtv" title="Star Wars The Clone Wars S04E17 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E17 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">186.6 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">4
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">3
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43734/star-wars-the-clone-wars-s04e16-french-hdtv" title="Star Wars The Clone Wars S04E16 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E16 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">177.4 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">3
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/43775/star-wars-the-clone-wars-s04e15-french-hdtv" title="Star Wars The Clone Wars S04E15 FRENCH HDTV en Torrent">Star Wars The Clone Wars S04E15 FRENCH HDTV</a></td>
+                                 <td width="11%" align="left">179.5 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">2
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/41295/star-wars-the-clone-wars-s05e04-vostfr-hdtv" title="Star Wars The Clone Wars S05E04 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E04 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">174.1 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">1
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">1
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/41130/star-wars-the-clone-wars-s05e05-vostfr-hdtv" title="Star Wars The Clone Wars S05E05 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E05 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">178.3 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">1
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/39833/star-wars-the-clone-wars-s05e16-vostfr-hdtv" title="Star Wars The Clone Wars S05E16 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E16 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">175.5 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">1
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">3
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/39930/star-wars-the-clone-wars-s05e15-vostfr-hdtv" title="Star Wars The Clone Wars S05E15 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E15 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">173.4 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">2
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/40087/star-wars-the-clone-wars-s05e14-vostfr-hdtv" title="Star Wars The Clone Wars S05E14 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E14 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">173.5 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">1
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/40281/star-wars-the-clone-wars-s05e12-vostfr-hdtv" title="Star Wars The Clone Wars S05E12 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E12 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">173.7 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">1
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">3
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/40531/star-wars-the-clone-wars-s05e11-vostfr-hdtv" title="Star Wars The Clone Wars S05E11 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E11 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">175.5 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">1
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/40636/star-wars-the-clone-wars-s05e10-vostfr-hdtv" title="Star Wars The Clone Wars S05E10 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E10 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">175.5 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">1
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">0
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/40728/star-wars-the-clone-wars-s05e09-vostfr-hdtv" title="Star Wars The Clone Wars S05E09 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E09 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">175.0 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">1
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">1
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="71%" align="left"><i class="Séries"></i> <a href="/torrent/40819/star-wars-the-clone-wars-s05e08-vostfr-hdtv" title="Star Wars The Clone Wars S05E08 VOSTFR HDTV en Torrent">Star Wars The Clone Wars S05E08 VOSTFR HDTV</a></td>
+                                 <td width="11%" align="left">173.9 MB</td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/uploader.png" alt="seeders">1
+                                 </td>
+                                 <td width="9%" align="left">
+                                    <img src="/static/img/downloader.png" alt="leechers">1
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                        <ul class="pagination">
+                           <li class="disabled"><a>1</a></li>
+                           </li>
+                           <li><a href="/recherche/star%20wars%20the%20acolyte/page/2">2</a></li>
+                           <li><a href="/recherche/star%20wars%20the%20acolyte/page/3">3</a></li>
+                           <li><a href="/recherche/star%20wars%20the%20acolyte/page/4">4</a></li>
+                           <li><a href="/recherche/star%20wars%20the%20acolyte/page/5">5</a></li>
+                           <li><a href="/recherche/star%20wars%20the%20acolyte/page/6">6</a></li>
+                           <li><a href="/recherche/star%20wars%20the%20acolyte/page/7">7</a></li>
+                           <li><a href="/recherche/star%20wars%20the%20acolyte/page/8">8</a></li>
+                           <li><a href="/recherche/star%20wars%20the%20acolyte/page/9">9</a></li>
+                           <li><a href="/recherche/star%20wars%20the%20acolyte/page/10">10</a></li>
+                           <li><a href="/recherche/star%20wars%20the%20acolyte/page/11">11</a></li>
+                           <li><a href="/recherche/star%20wars%20the%20acolyte/page/2">Suivant</a></li>
+                           <li><a href="/recherche/star%20wars%20the%20acolyte/page/18">18</a></li>
+                        </ul>
+                     </div>
+                     <div class="bloc-torrent">
+                        <pre><strong><big>OxTorrent Officiel <span style="color:red;">.co</span></big><br><br>--> <kbd>Ctrl</kbd> + <kbd>D</kbd>  (Favoris)<br><br></strong></pre>
+                        <div class="title"><i class="fa fa-th-large"> </i> Films Hasard</div>
+                        <div class="cover">
+                           <a href="/torrent/63659/triple-threat-truefrench-webrip-2019">
+                           <img style="width:135px;height:177px;" title="Triple Threat TRUEFRENCH WEBRIP 2019" alt="Triple Threat TRUEFRENCH WEBRIP 2019" src="/pictures/triple-threat-truefrench-webrip-2019.jpg">
+                           <b>Télécharger !</b>
+                           </a>
+                        </div>
+                        <div class="cover">
+                           <a href="/torrent/89215/spider-man-no-way-home-french-dvdrip-2021">
+                           <img style="width:135px;height:177px;" title="Spider-Man: No Way Home FRENCH DVDRIP 2021" alt="Spider-Man: No Way Home FRENCH DVDRIP 2021" src="/pictures/spider-man-no-way-home-french-dvdrip-2021.jpg">
+                           <b>Télécharger !</b>
+                           </a>
+                        </div>
+                        <div class="cover">
+                           <a href="/torrent/109389/expendables-4-truefrench-webrip-x264-2023">
+                           <img style="width:135px;height:177px;" title="Expendables 4 TRUEFRENCH WEBRIP x264 2023" alt="Expendables 4 TRUEFRENCH WEBRIP x264 2023" src="/pictures/expendables-4-truefrench-webrip-x264-2023.jpg">
+                           <b>Télécharger !</b>
+                           </a>
+                        </div>
+                        <div class="cover">
+                           <a href="/torrent/104240/le-samaritain-truefrench-webrip-x264-2022">
+                           <img style="width:135px;height:177px;" title="Le Samaritain TRUEFRENCH WEBRIP x264 2022" alt="Le Samaritain TRUEFRENCH WEBRIP x264 2022" src="/pictures/le-samaritain-truefrench-webrip-x264-2022.jpg">
+                           <b>Télécharger !</b>
+                           </a>
+                        </div>
+                        <div class="cover">
+                           <a href="/torrent/103400/sonic-2-le-film-truefrench-webrip-x264-2022">
+                           <img style="width:135px;height:177px;" title="Sonic 2 le film TRUEFRENCH WEBRIP x264 2022" alt="Sonic 2 le film TRUEFRENCH WEBRIP x264 2022" src="/pictures/sonic-2-le-film-truefrench-webrip-x264-2022.jpg">
+                           <b>Télécharger !</b>
+                           </a>
+                        </div>
+                        <div class="cover">
+                           <a href="/torrent/87178/one-shot-french-dvdrip-2022">
+                           <img style="width:135px;height:177px;" title="One Shot FRENCH DVDRIP 2022" alt="One Shot FRENCH DVDRIP 2022" src="/pictures/one-shot-french-dvdrip-2022.jpg">
+                           <b>Télécharger !</b>
+                           </a>
+                        </div>
+                        <div class="cover">
+                           <a href="/torrent/63630/agents-presque-secrets-french-bluray-1080p-2016">
+                           <img style="width:135px;height:177px;" title="Agents presque secrets FRENCH BluRay 1080p 2016" alt="Agents presque secrets FRENCH BluRay 1080p 2016" src="/pictures/agents-presque-secrets-french-bluray-1080p-2016.jpg">
+                           <b>Télécharger !</b>
+                           </a>
+                        </div>
+                        <div class="cover">
+                           <a href="/torrent/63724/fast-and-furious-5-french-hdlight-1080p-2011">
+                           <img style="width:135px;height:177px;" title="Fast and Furious 5 FRENCH HDLight 1080p 2011" alt="Fast and Furious 5 FRENCH HDLight 1080p 2011" src="/pictures/fast-and-furious-5-french-hdlight-1080p-2011.jpg">
+                           <b>Télécharger !</b>
+                           </a>
+                        </div>
+                        <div class="cover">
+                           <a href="/torrent/63751/l-adieu-the-farewell-french-dvdrip-2019">
+                           <img style="width:135px;height:177px;" title="L'Adieu (The Farewell) FRENCH DVDRIP 2019" alt="L'Adieu (The Farewell) FRENCH DVDRIP 2019" src="/pictures/l-adieu-the-farewell-french-dvdrip-2019.jpg">
+                           <b>Télécharger !</b>
+                           </a>
+                        </div>
+                        <div class="cover">
+                           <a href="/torrent/10394/catwoman-french-dvdrip-2004-1">
+                           <img style="width:135px;height:177px;" title="Catwoman FRENCH DVDRIP 2004" alt="Catwoman FRENCH DVDRIP 2004" src="/pictures/catwoman-french-dvdrip-2004-1.jpg">
+                           <b>Télécharger !</b>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="base-bodi"></div>
+            <div class="footing navbar-fixed-bottom">
+               <div class="container"></div>
+            </div>
+         </div>
+      </div>
+      <div style="display:none">
+         <div id="histats_counter"></div>
+         <script type="text/javascript">var _Hasync= _Hasync|| [];
+            _Hasync.push(['Histats.start', '1,4336799,4,511,95,18,00000000']);
+            _Hasync.push(['Histats.fasi', '1']);
+            _Hasync.push(['Histats.track_hits', '']);
+            (function() {
+            var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+            hs.src = ('//s10.histats.com/js15_as.js');
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+            })();
+         </script>
+         <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4336799&101" alt="how to add a hit counter to a website" border="0"></a></noscript>
+      </div>
+      <script data-cfasync="false" async type="text/javascript" src="//lr.punkierdetruck.com/rkWTRof36WK2l/MooqA"></script>
+   </body>
+</html>
