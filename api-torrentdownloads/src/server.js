@@ -17,20 +17,36 @@ app.use(cors({
 }));
 
 app.get('/api/torrents', (req, res) => {
-    const torrents = torrentService.getTorrents();
-    res.json(torrents);
+    try {
+        const torrents = torrentService.getTorrents();
+        res.json(torrents);
+    } catch (error) {
+        res.status(500).json(error);
+    }
 });
 
 app.post('/api/torrents', async (req, res) => {
-    const { magnetLink, pageLink } = req.body;
-    const torrent = await torrentService.addTorrent(magnetLink, pageLink, process.env.DOWNLOAD_PATH);
-    res.status(201).json(torrent);
+    try {
+        const { magnetLink, pageLink } = req.body;
+        const result = await torrentService.addTorrent(magnetLink, pageLink, process.env.DOWNLOAD_PATH);
+        if (typeof result === 'string') {
+            res.status(400).json({ message: result });
+        } else {
+            res.status(201).json(result);
+        }
+    } catch (error) {
+        res.status(500).json(error);
+    }
 });
 
 app.delete('/api/torrents', async (req, res) => {
-    const { magnetLink } = req.body;
-    await torrentService.deleteTorrent(magnetLink);
-    res.status(200).send();
+    try {
+        const { magnetLink } = req.body;
+        await torrentService.deleteTorrent(magnetLink);
+        res.status(200).send();
+    } catch (error) {
+        res.status(500).json(error);
+    }
 });
 
 const port = process.env.PORT;

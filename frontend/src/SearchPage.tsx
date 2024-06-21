@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Download, Clipboard, CheckCircle } from 'lucide-react';
+import ModalComponent from './components/ModalComponent';
+import { ModalTypeEnum } from './components/ModalTypeEnum';
+import { AddTorrentDownloadRequest } from '../../api-torrentsearch/src/torrentDownloads/AddTorrentDownloadRequest';
 
 interface GetResultResponse {
   Title: string;
@@ -20,7 +23,7 @@ const SearchPage: React.FC = () => {
   const [results, setResults] = useState<GetResultResponse[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [modalSuccess, setModalSuccess] = useState<boolean>(false);
+  const [modalType, setModalType] = useState<ModalTypeEnum>(ModalTypeEnum.None);
   const [copied, setCopied] = useState<boolean>(false);
   const [progressData, setProgressData] = useState<TorrentDownloadResponse[]>([]);
 
@@ -44,21 +47,31 @@ const SearchPage: React.FC = () => {
     setModalOpen(true);
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:4446/api/torrents/download?q=${encodeURIComponent(link)}`);
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const result: { magnetUrl: string } = await response.json();
-      setModalSuccess(true);
+      let response = await fetch(`http://localhost:4446/api/torrents/download?q=${encodeURIComponent(link)}`);
+      let json = await response.json();
+      
+      const addTorrent = await fetch('http://localhost:4445/api/torrents', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(json),
+      });
 
-      // Automatically close the modal 2 seconds after the end of the API call
+      if (addTorrent.status === 400) {
+        setModalType(ModalTypeEnum.Warning);
+      } else if (!response.ok) {
+        setModalType(ModalTypeEnum.Error);
+      } else {
+        setModalType(ModalTypeEnum.Success);
+      }
+      
       setTimeout(() => {
         setModalOpen(false);
-        setModalSuccess(false);
+        setModalType(ModalTypeEnum.None);
       }, 2000);
     } catch (error) {
-      setModalSuccess(false);
-      console.error("There was an error downloading the torrent.", error);
+      setModalType(ModalTypeEnum.Error);
     } finally {
       setLoading(false);
     }
@@ -81,13 +94,6 @@ const SearchPage: React.FC = () => {
     const interval = setInterval(fetchProgress, 2000);
     return () => clearInterval(interval);
   }, []);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText("Copied text").then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
-    });
-  };
 
   const getProgress = (link: string) => {
     const match = progressData.find(item => item.pageLink === link);
@@ -185,31 +191,8 @@ const SearchPage: React.FC = () => {
         )}
       </div>
 
-      {/* Modal */}
-      {modalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75">
-          <div className="bg-white rounded-lg p-6 max-w-lg w-full">
-            {loading ? (
-              <div className="flex justify-center">
-                <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-32 w-32"></div>
-              </div>
-            ) : (
-              <div className="flex flex-col items-center">
-                <CheckCircle className="h-12 w-12 text-green-500" />
-                <div className="text-sm text-gray-900 mt-4">Download Successful</div>
-              </div>
-            )}
-            <div className="mt-4 flex justify-end space-x-2">
-              <button onClick={handleCopy} className="py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                {copied ? <CheckCircle className="h-5 w-5 text-green-500" /> : <Clipboard className="h-5 w-5" />}
-              </button>
-              <button onClick={() => setModalOpen(false)} className="py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <ModalComponent ModalOpen={modalOpen} ModalType={modalType} Loading={loading} />
+
     </div>
   );
 };
