@@ -1,5 +1,5 @@
 import { parseStringPromise } from 'xml2js';
-import { PlexLibrary } from './models/PlexLibrary';
+import { PlexLibrary } from './models/PlexLibrary.js';
 
 class PlexApiClient {
     private serverUrl: string;

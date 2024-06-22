@@ -1,12 +1,12 @@
 import { Router, Request, Response } from 'express';
 import { container } from 'tsyringe';
 import dotenv from 'dotenv';
-import ITorrentSearchService from './torrentSearch/contracts/ITorrentSearchService';
-import OxTorrentProvider from './torrentSearch/providers/OxTorrentProvider';
-import HttpError from './errors/HttpError';
-import AddTorrentDownloadRequest from './torrentDownloads/AddTorrentDownloadRequest';
-import DictionaryCache from './utils/DictionaryCache';
-import TorrentService from './utils/TorrentService';
+import ITorrentSearchService from './torrentSearch/contracts/ITorrentSearchService.js';
+import OxTorrentProvider from './torrentSearch/providers/OxTorrentProvider.js';
+import HttpError from './errors/HttpError.js';
+import AddTorrentDownloadRequest from './torrentDownloads/AddTorrentDownloadRequest.js';
+import DictionaryCache from './utils/DictionaryCache.js';
+import TorrentService from './utils/TorrentService.js';
 
 dotenv.config();
 

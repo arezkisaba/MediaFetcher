@@ -9,8 +9,13 @@ class DictionaryCache {
         this.cache.set(key, value);
     }
 
-    get(key : string) : string | undefined {
-        return this.cache.get(key);
+    get(key : string) : string {
+        const value = this.cache.get(key);
+        if (value === undefined) {
+            throw new Error(`Key ${key} not found in cache`);
+        }
+        
+        return value;
     }
 
     has(key : string) : boolean {

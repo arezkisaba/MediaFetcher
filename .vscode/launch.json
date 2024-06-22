@@ -7,7 +7,7 @@
         {
             "name": "Development - Fullstack",
             "configurations": [
-                "Development - Api - TorrentDownloads",
+                // "Development - Api - TorrentDownloads",
                 "Development - Api - TorrentSearch",
                 "Development - Frontend"
             ]

@@ -1,4 +1,4 @@
-import { PlexAuthResponse } from './models/PlexAuthResponse';
+import { PlexAuthResponse } from './models/PlexAuthResponse.js';
 
 class PlexAuthClient {
     private plexSignInUrl = 'https://plex.tv/users/sign_in.json';

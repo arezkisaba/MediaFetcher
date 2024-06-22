@@ -1,6 +1,6 @@
-import DownloadResponse from '../models/DownloadResponse';
-import GetResultResponse from '../models/GetResultResponse';
-import ITorrentProvider from './contracts/ITorrentProvider';
+import DownloadResponse from '../models/DownloadResponse.js';
+import GetResultResponse from '../models/GetResultResponse.js';
+import ITorrentProvider from './contracts/ITorrentProvider.js';
 
 class OxTorrentProvider implements ITorrentProvider {
     private baseUrl: string;

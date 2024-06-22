@@ -1,8 +1,8 @@
 import { injectable } from 'tsyringe';
-import ITorrentSearchService from "./contracts/ITorrentSearchService";
-import GetResultResponse from "./models/GetResultResponse";
-import OxTorrentProvider from "./providers/OxTorrentProvider";
-import ITorrentProvider from "./providers/contracts/ITorrentProvider";
+import ITorrentSearchService from './contracts/ITorrentSearchService.js';
+import GetResultResponse from './models/GetResultResponse.js';
+import OxTorrentProvider from './providers/OxTorrentProvider.js'
+import ITorrentProvider from './providers/contracts/ITorrentProvider.js';
 
 @injectable()
 class TorrentSearchService implements ITorrentSearchService {

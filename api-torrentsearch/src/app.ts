@@ -1,7 +1,7 @@
 import express, { Application } from 'express';
-import './container';
-import routes from './routes';
 import cors from 'cors';
+import './container.js';
+import routes from './routes.js';
 
 const app: Application = express();
 
