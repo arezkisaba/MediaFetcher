@@ -1,6 +1,5 @@
 version: '3.8'
 services:
-
   backend:
     build:
       context: ./backend
@@ -13,7 +12,6 @@ services:
         - .env
     volumes:
         - ${DOWNLOAD_PATH_HOSTSIDE}:${DOWNLOAD_PATH}:rw
-
   frontend:
     build:
       context: ./frontend
