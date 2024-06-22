@@ -13,3 +13,11 @@ docker logs <containerid>
 # start a docker compose instance
 docker compose up
 ```
+
+```
+# ChatGPT customization
+I'm a Typescript/Javascript/C# Developer
+I'm using Linux first, and Windows next
+When you give me code snippets, please use 4 spaces tabs
+For conditional structures and loops, use braces
+```

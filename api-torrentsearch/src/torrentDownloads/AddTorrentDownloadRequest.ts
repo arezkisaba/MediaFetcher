@@ -1,4 +1,4 @@
-export interface AddTorrentDownloadRequest {
+export default interface AddTorrentDownloadRequest {
     magnetLink: string;
     pageLink: string;
 }

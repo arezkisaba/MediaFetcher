@@ -40,10 +40,10 @@ class OxTorrentProvider implements ITorrentProvider {
             let rowMatch;
         
             while ((rowMatch = rowRegex.exec(tableHtml)) !== null) {
-                const rowHtml = rowMatch[1];
+                const rowHtml = rowMatch[1] as string;
+                const matches = Array.from(rowHtml.matchAll(cellRegex));
+                const cells = matches.map(match => match[1]);
 
-                const cells = Array.from(rowHtml.matchAll(cellRegex)).map(match => match[1]);
-        
                 if (cells.length !== 4) {
                     continue;
                 }
