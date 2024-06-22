@@ -28,7 +28,7 @@ const SearchPage: React.FC = () => {
     const handleSearch = async () => {
         setLoading(true);
         try {
-            const response = await fetch(`http://localhost:4446/api/torrents?q=${query}`);
+            const response = await fetch(`http://localhost:4445/api/torrents?q=${query}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -45,10 +45,10 @@ const SearchPage: React.FC = () => {
         setModalOpen(true);
         setLoading(true);
         try {
-            let response = await fetch(`http://localhost:4446/api/torrents/download?q=${encodeURIComponent(link)}`);
+            let response = await fetch(`http://localhost:4445/api/torrents/download?q=${encodeURIComponent(link)}`);
             let json = await response.json();
 
-            const addTorrent = await fetch('http://localhost:4446/api/torrent-downloads', {
+            const addTorrent = await fetch('http://localhost:4445/api/torrent-downloads', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ const SearchPage: React.FC = () => {
 
     const fetchProgress = async () => {
         try {
-            const response = await fetch('http://localhost:4446/api/torrent-downloads');
+            const response = await fetch('http://localhost:4445/api/torrent-downloads');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }

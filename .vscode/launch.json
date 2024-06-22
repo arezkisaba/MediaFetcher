@@ -7,31 +7,19 @@
         {
             "name": "Development - Fullstack",
             "configurations": [
-                // "Development - Api - TorrentDownloads",
-                "Development - Api - TorrentSearch",
+                "Development - Backend",
                 "Development - Frontend"
             ]
         }
     ],
     "configurations": [
         {
-            "name": "Development - Api - TorrentDownloads",
+            "name": "Development - Backend",
             "type": "node-terminal",
             "request": "launch",
             "command": "npm start",
-            "cwd": "${workspaceFolder}/api-torrentdownloads",
-            "envFile": "${workspaceFolder}/api-torrentdownloads/.env.development",
-            "skipFiles": [
-                "<node_internals>/**"
-            ]
-        },
-        {
-            "name": "Development - Api - TorrentSearch",
-            "type": "node-terminal",
-            "request": "launch",
-            "command": "npm start",
-            "cwd": "${workspaceFolder}/api-torrentsearch",
-            "envFile": "${workspaceFolder}/api-torrentsearch/.env.development",
+            "cwd": "${workspaceFolder}/backend",
+            "envFile": "${workspaceFolder}/backend/.env.development",
             "skipFiles": [
                 "<node_internals>/**"
             ]

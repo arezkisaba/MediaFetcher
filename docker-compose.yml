@@ -1,29 +1,19 @@
 version: '3.8'
 services:
-  api-torrentdownloads:
+
+  backend:
     build:
-      context: ./api-torrentdownloads
+      context: ./backend
       dockerfile: Dockerfile
     ports:
-      - ${PORT_API_TORRENTDOWNLOADS_HOSTSIDE}:${PORT}
+      - ${PORT_BACKEND_HOSTSIDE}:${PORT}
     environment:
       - NODE_ENV=production
     env_file:
         - .env
     volumes:
         - ${DOWNLOAD_PATH_HOSTSIDE}:${DOWNLOAD_PATH}:rw
-  api-torrentsearch:
-    build:
-      context: ./api-torrentsearch
-      dockerfile: Dockerfile
-    ports:
-      - ${PORT_API_TORRENTSEARCH_HOSTSIDE}:${PORT}
-    environment:
-      - NODE_ENV=production
-    env_file:
-        - .env
-    volumes:
-        - ${DOWNLOAD_PATH_HOSTSIDE}:${DOWNLOAD_PATH}:rw
+
   frontend:
     build:
       context: ./frontend
@@ -31,7 +21,7 @@ services:
     ports:
       - ${PORT_FRONTEND_HOSTSIDE}:${PORT}
     depends_on:
-      - api-torrentdownloads
+      - backend
     environment:
       - NODE_ENV=production
     env_file:
