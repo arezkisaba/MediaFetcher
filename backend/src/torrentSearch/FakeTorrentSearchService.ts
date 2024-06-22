@@ -1,11 +1,11 @@
 import { injectable, singleton } from 'tsyringe';
 import ITorrentSearchService from './contracts/ITorrentSearchService.js';
-import { GetResultResponse } from 'shared/src/models/GetResultResponse.js';
+import { GetTorrentSearchResultResponse } from 'shared/src/models/GetTorrentSearchResultResponse.js';
 
 @injectable()
 export class FakeTorrentSearchService implements ITorrentSearchService {
 
-    async getResults(searchPattern: string): Promise<GetResultResponse[]> {
+    async getResults(searchPattern: string): Promise<GetTorrentSearchResultResponse[]> {
 
         return [
             {

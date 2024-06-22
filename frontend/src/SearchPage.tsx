@@ -2,22 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Download } from 'lucide-react';
 import ModalComponent from './components/ModalComponent';
 import { ModalTypeEnum } from './components/ModalTypeEnum';
+import { GetTorrentSearchResultResponse } from '@shared/src/models/GetTorrentSearchResultResponse.js';
 import { AddTorrentDownloadRequest } from '@shared/src/models/AddTorrentDownloadRequest.js';
-import { GetResultResponse } from '@shared/src/models/GetResultResponse.js';
-
-interface TorrentDownloadResponse {
-    name: string;
-    pageLink: string;
-    progress: number;
-}
+import { GetTorrentDownloadResponse } from '@shared/src/models/GetTorrentDownloadResponse.js';
 
 const SearchPage: React.FC = () => {
     const [query, setQuery] = useState<string>('the acolyte');
-    const [results, setResults] = useState<GetResultResponse[]>([]);
+    const [results, setResults] = useState<GetTorrentSearchResultResponse[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const [modalType, setModalType] = useState<ModalTypeEnum>(ModalTypeEnum.None);
-    const [progressData, setProgressData] = useState<TorrentDownloadResponse[]>([]);
+    const [progressData, setProgressData] = useState<GetTorrentDownloadResponse[]>([]);
 
     const handleSearch = async () => {
         setLoading(true);
@@ -26,7 +21,7 @@ const SearchPage: React.FC = () => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            const data: GetResultResponse[] = await response.json();
+            const data: GetTorrentSearchResultResponse[] = await response.json();
             setResults(data);
         } catch (error) {
             console.error("There was an error fetching the results!", error);
@@ -40,7 +35,7 @@ const SearchPage: React.FC = () => {
         setLoading(true);
         try {
             const request: AddTorrentDownloadRequest = {
-                pageLink: link
+                PageLink: link
             };
             const response = await fetch('http://localhost:4445/api/torrent-downloads', {
                 method: 'POST',
@@ -75,7 +70,7 @@ const SearchPage: React.FC = () => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            const data: TorrentDownloadResponse[] = await response.json();
+            const data: GetTorrentDownloadResponse[] = await response.json();
             setProgressData(data);
         } catch (error) {
             console.error("There was an error fetching the progress data!", error);
@@ -88,8 +83,8 @@ const SearchPage: React.FC = () => {
     }, []);
 
     const getProgress = (link: string) => {
-        const match = progressData.find(item => item.pageLink === link);
-        return match ? match.progress : 0;
+        const match = progressData.find(item => item.PageLink === link);
+        return match ? match.Progress : 0;
     };
 
     return (

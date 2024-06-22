@@ -1,3 +1,3 @@
 export interface AddTorrentDownloadRequest {
-    pageLink: string;
+    PageLink: string;
 }

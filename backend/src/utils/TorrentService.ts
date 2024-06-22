@@ -1,4 +1,4 @@
-import TorrentResponse from './TorrentResponse.js';
+import { GetTorrentDownloadResponse } from '@shared/src/models/GetTorrentDownloadResponse.js';
 import DictionaryCache from './DictionaryCache.js';
 import WebTorrent from 'webtorrent';
 
@@ -10,8 +10,12 @@ class TorrentService {
     async getTorrents() {
         const items = client.torrents.map(
             torrent => {
-                const pageLink = cache.get(`magnet:?xt=${torrent.xt}`);
-                return new TorrentResponse(torrent.name, pageLink, torrent.progress)
+                const result : GetTorrentDownloadResponse = {
+                    Name: torrent.name,
+                    PageLink: cache.get(`magnet:?xt=${torrent.xt}`),
+                    Progress: torrent.progress * 100
+                };
+                return result;
             }
         );
         console.log(`Torrents returned successfully`);
@@ -26,9 +30,13 @@ class TorrentService {
             }
 
             client.add(magnetLink, { path: outputDir }, (torrent) => {
-                const response = new TorrentResponse(torrent.name, pageLink, torrent.progress);
+                const response : GetTorrentDownloadResponse = {
+                    Name: torrent.name,
+                    PageLink: pageLink,
+                    Progress: torrent.progress
+                };
                 cache.add(`magnet:?xt=${torrent.xt}`, pageLink);
-                console.log(`Torrent '${response.name}' added successfully to ${outputDir}`);
+                console.log(`Torrent '${response.Name}' added successfully to ${outputDir}`);
                 resolve(response);
             });
         });

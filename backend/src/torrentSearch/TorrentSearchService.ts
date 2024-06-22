@@ -2,7 +2,7 @@ import { injectable } from 'tsyringe';
 import ITorrentSearchService from './contracts/ITorrentSearchService.js';
 import OxTorrentProvider from './providers/OxTorrentProvider.js'
 import ITorrentProvider from './providers/contracts/ITorrentProvider.js';
-import { GetResultResponse } from 'shared/src/models/GetResultResponse.js';
+import { GetTorrentSearchResultResponse } from 'shared/src/models/GetTorrentSearchResultResponse.js';
 
 @injectable()
 class TorrentSearchService implements ITorrentSearchService {
@@ -14,8 +14,8 @@ class TorrentSearchService implements ITorrentSearchService {
         ];
     }
 
-    async getResults(searchPattern: string): Promise<GetResultResponse[]> {
-        const results: GetResultResponse[] = [];
+    async getResults(searchPattern: string): Promise<GetTorrentSearchResultResponse[]> {
+        const results: GetTorrentSearchResultResponse[] = [];
 
         for (const provider of this.providers) {
             const providerResults = await provider.getResults(searchPattern);

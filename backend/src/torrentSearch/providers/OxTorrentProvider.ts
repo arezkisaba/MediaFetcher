@@ -1,6 +1,6 @@
 import ITorrentProvider from './contracts/ITorrentProvider.js';
 import DownloadResponse from '../models/DownloadResponse.js';
-import { GetResultResponse } from 'shared/src/models/GetResultResponse.js';
+import { GetTorrentSearchResultResponse } from 'shared/src/models/GetTorrentSearchResultResponse.js';
 
 class OxTorrentProvider implements ITorrentProvider {
     private baseUrl: string;
@@ -11,7 +11,7 @@ class OxTorrentProvider implements ITorrentProvider {
         this.searchUrl = `${this.baseUrl}/recherche`;
     }
 
-    async getResults(searchPattern : string): Promise<GetResultResponse[]> {
+    async getResults(searchPattern : string): Promise<GetTorrentSearchResultResponse[]> {
         const url = `${this.searchUrl}/${encodeURIComponent(searchPattern)}`;
 
         try {
@@ -36,7 +36,7 @@ class OxTorrentProvider implements ITorrentProvider {
             const cellRegex = /<td[^>]*>([\s\S]*?)<\/td>/g;
             const linkRegex = /<a href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/;
         
-            const torrentList: GetResultResponse[] = [];
+            const torrentList: GetTorrentSearchResultResponse[] = [];
             let rowMatch;
         
             while ((rowMatch = rowRegex.exec(tableHtml)) !== null) {
@@ -58,7 +58,7 @@ class OxTorrentProvider implements ITorrentProvider {
                 const size = cells[1].trim();
                 const seeders = parseInt(cells[2].replace(/<[^>]+>/g, '').trim(), 10);
                 const leechers = parseInt(cells[3].replace(/<[^>]+>/g, '').trim(), 10);
-                const torrent: GetResultResponse = {
+                const torrent: GetTorrentSearchResultResponse = {
                     Title: title,
                     Size: size,
                     Seeders: seeders,

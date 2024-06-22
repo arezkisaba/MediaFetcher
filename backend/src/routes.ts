@@ -40,8 +40,8 @@ router.post('/torrent-downloads', async (req: Request, res: Response) => {
     try {
         const request = req.body as AddTorrentDownloadRequest; 
         const oxTorrentClient = new OxTorrentProvider();
-        const downloadResponse = await oxTorrentClient.download(request.pageLink);
-        const result = await torrentService.addTorrent(downloadResponse.magnetUrl, request.pageLink, process.env.DOWNLOAD_PATH as string);
+        const downloadResponse = await oxTorrentClient.download(request.PageLink);
+        const result = await torrentService.addTorrent(downloadResponse.magnetUrl, request.PageLink, process.env.DOWNLOAD_PATH as string);
         if (typeof result === 'string') {
             res.status(400).json({ message: result });
         } else {

@@ -1,4 +1,4 @@
-export interface GetResultResponse {
+export interface GetTorrentSearchResultResponse{
     Title: string;
     Size: string;
     Seeders: number;
