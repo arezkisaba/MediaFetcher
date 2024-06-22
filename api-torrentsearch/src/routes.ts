@@ -5,8 +5,10 @@ import ITorrentSearchService from './torrentSearch/contracts/ITorrentSearchServi
 import OxTorrentProvider from './torrentSearch/providers/OxTorrentProvider';
 import HttpError from './errors/HttpError';
 import AddTorrentDownloadRequest from './torrentDownloads/AddTorrentDownloadRequest';
-import DictionaryCache from './utils/DictionaryCache.js';
-import TorrentService from './utils/TorrentService.js';
+import DictionaryCache from './utils/DictionaryCache';
+import TorrentService from './utils/TorrentService';
+
+dotenv.config();
 
 const router = Router();
 const torrentSearchService = container.resolve<ITorrentSearchService>('ITorrentSearchService');
@@ -58,7 +60,7 @@ router.get('/torrent-downloads', async (req: Request, res: Response) => {
 router.post('/torrent-downloads', async (req: Request, res: Response) => {
     try {
         const { magnetLink, pageLink } = req.body;
-        const result = await torrentService.addTorrent(magnetLink, pageLink, process.env.DOWNLOAD_PATH);
+        const result = await torrentService.addTorrent(magnetLink, pageLink, process.env.DOWNLOAD_PATH as string);
         if (typeof result === 'string') {
             res.status(400).json({ message: result });
         } else {

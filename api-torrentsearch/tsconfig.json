@@ -11,9 +11,9 @@
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "noImplicitAny": false,
-    "allowJs": true,
-    "checkJs": false
+    // "noImplicitAny": false,
+    // "allowJs": true,
+    // "checkJs": false
   },
   "include": ["src"],
   "exclude": ["node_modules"]

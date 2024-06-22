@@ -1,6 +1,9 @@
 class TorrentResponse {
-    constructor(id, name, pageLink, progress) {
-        this.id = id;
+    name: string;
+    pageLink: string;
+    progress: number;
+
+    constructor(name : string, pageLink : string, progress : number) {
         this.name = name;
         this.pageLink = pageLink;
         this.progress = progress * 100;
