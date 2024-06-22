@@ -1,22 +1,18 @@
-// {
-//     "compilerOptions": {
-//         "rootDir": "./src",
-//         "outDir": "./dist",
-//         "module": "NodeNext",
-//         "strict": true,
-//         "composite": true,
-//         "forceConsistentCasingInFileNames": true
-//     }
-// }
 {
     "compilerOptions": {
-        "target": "es5",
-        "module": "es2015",
+        "target": "ES6",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "strict": true,
+        "sourceMap": true,
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "composite": true,
         "declaration": true,
         "declarationMap": true,
-        "rootDir": ".",
-        "composite": true,
-        "strict": true,
-        "moduleResolution": "node"
     }
 }
