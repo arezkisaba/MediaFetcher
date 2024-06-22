@@ -1,6 +1,6 @@
 import { injectable, singleton } from 'tsyringe';
 import ITorrentSearchService from './contracts/ITorrentSearchService.js';
-import { GetResultResponse } from '@shared/GetResultResponse.js';
+import { GetResultResponse } from 'shared/src/models/GetResultResponse.js';
 
 @injectable()
 export class FakeTorrentSearchService implements ITorrentSearchService {

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Download } from 'lucide-react';
 import ModalComponent from './components/ModalComponent';
 import { ModalTypeEnum } from './components/ModalTypeEnum';
-import { AddTorrentDownloadRequest } from '@shared/AddTorrentDownloadRequest.js';
-import { GetResultResponse } from '@shared/GetResultResponse.js';
+import { AddTorrentDownloadRequest } from '@shared/src/models/AddTorrentDownloadRequest.js';
+import { GetResultResponse } from '@shared/src/models/GetResultResponse.js';
 
 interface TorrentDownloadResponse {
     name: string;

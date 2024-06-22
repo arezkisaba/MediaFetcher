@@ -1,13 +1,22 @@
+// {
+//     "compilerOptions": {
+//         "rootDir": "./src",
+//         "outDir": "./dist",
+//         "module": "NodeNext",
+//         "strict": true,
+//         "composite": true,
+//         "forceConsistentCasingInFileNames": true
+//     }
+// }
 {
     "compilerOptions": {
-      "target": "es5",
-      "module": "es2015",
-      "declaration": true,
-      "declarationMap": true,
-      // "outDir": "./",               
-      "rootDir": ".",
-      "composite": true,
-      "strict": true,
-      "moduleResolution": "node"
+        "target": "es5",
+        "module": "es2015",
+        "declaration": true,
+        "declarationMap": true,
+        "rootDir": ".",
+        "composite": true,
+        "strict": true,
+        "moduleResolution": "node"
     }
-  }
+}

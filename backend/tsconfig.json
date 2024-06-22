@@ -21,7 +21,7 @@
     },
     "include": [
         "src"
-, "../shared/GetResultResponse.ts"    ],
+, "../shared/src/models/GetResultResponse.ts"    ],
     "exclude": [
         "node_modules"
     ],

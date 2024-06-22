@@ -5,7 +5,7 @@ import ITorrentSearchService from './torrentSearch/contracts/ITorrentSearchServi
 import OxTorrentProvider from './torrentSearch/providers/OxTorrentProvider.js';
 import HttpError from './errors/HttpError.js';
 import TorrentService from './utils/TorrentService.js';
-import { AddTorrentDownloadRequest } from '@shared/AddTorrentDownloadRequest.js';
+import { AddTorrentDownloadRequest } from 'shared/src/models/AddTorrentDownloadRequest.js';
 
 dotenv.config();
 
