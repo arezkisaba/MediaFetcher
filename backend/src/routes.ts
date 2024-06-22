@@ -4,41 +4,20 @@ import dotenv from 'dotenv';
 import ITorrentSearchService from './torrentSearch/contracts/ITorrentSearchService.js';
 import OxTorrentProvider from './torrentSearch/providers/OxTorrentProvider.js';
 import HttpError from './errors/HttpError.js';
-import AddTorrentDownloadRequest from './torrentDownloads/AddTorrentDownloadRequest.js';
-import DictionaryCache from './utils/DictionaryCache.js';
 import TorrentService from './utils/TorrentService.js';
+import { AddTorrentDownloadRequest } from '@shared/AddTorrentDownloadRequest.js';
 
 dotenv.config();
 
 const router = Router();
 const torrentSearchService = container.resolve<ITorrentSearchService>('ITorrentSearchService');
 const torrentService = new TorrentService();
-const cache = new DictionaryCache();
 
-router.get('/torrents', async (req: Request, res: Response) => {
+router.get('/torrent-search', async (req: Request, res: Response) => {
     try {
         const searchPattern = req.query.q as string;
         const results = await torrentSearchService.getResults(searchPattern);
         return res.json(results);
-    } catch (err) {
-        const error = err as HttpError;
-        res.status(error.status || 500).json({
-            status: error.status || 500,
-            message: error.message || 'Internal Server Error',
-        });
-    }
-});
-
-router.get('/torrents/download', async (req: Request, res: Response) => {
-    try {
-        const pageLink = req.query.q as string;
-        const oxTorrentClient = new OxTorrentProvider();
-        const downloadResponse = await oxTorrentClient.download(pageLink);
-        const addTorrentDownloadRequest: AddTorrentDownloadRequest = {
-            magnetLink: downloadResponse.magnetUrl,
-            pageLink: pageLink
-        };
-        return res.json(addTorrentDownloadRequest);
     } catch (err) {
         const error = err as HttpError;
         res.status(error.status || 500).json({
@@ -59,8 +38,10 @@ router.get('/torrent-downloads', async (req: Request, res: Response) => {
 
 router.post('/torrent-downloads', async (req: Request, res: Response) => {
     try {
-        const { magnetLink, pageLink } = req.body;
-        const result = await torrentService.addTorrent(magnetLink, pageLink, process.env.DOWNLOAD_PATH as string);
+        const request = req.body as AddTorrentDownloadRequest; 
+        const oxTorrentClient = new OxTorrentProvider();
+        const downloadResponse = await oxTorrentClient.download(request.pageLink);
+        const result = await torrentService.addTorrent(downloadResponse.magnetUrl, request.pageLink, process.env.DOWNLOAD_PATH as string);
         if (typeof result === 'string') {
             res.status(400).json({ message: result });
         } else {

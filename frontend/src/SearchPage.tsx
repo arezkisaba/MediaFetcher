@@ -2,14 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Download } from 'lucide-react';
 import ModalComponent from './components/ModalComponent';
 import { ModalTypeEnum } from './components/ModalTypeEnum';
-
-interface GetResultResponse {
-    Title: string;
-    Size: string;
-    Seeders: number;
-    Leechers: number;
-    Link: string;
-}
+import { AddTorrentDownloadRequest } from '@shared/AddTorrentDownloadRequest.js';
+import { GetResultResponse } from '@shared/GetResultResponse.js';
 
 interface TorrentDownloadResponse {
     name: string;
@@ -28,7 +22,7 @@ const SearchPage: React.FC = () => {
     const handleSearch = async () => {
         setLoading(true);
         try {
-            const response = await fetch(`http://localhost:4445/api/torrents?q=${query}`);
+            const response = await fetch(`http://localhost:4445/api/torrent-search?q=${query}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -45,20 +39,20 @@ const SearchPage: React.FC = () => {
         setModalOpen(true);
         setLoading(true);
         try {
-            let response = await fetch(`http://localhost:4445/api/torrents/download?q=${encodeURIComponent(link)}`);
-            let json = await response.json();
-
-            const addTorrent = await fetch('http://localhost:4445/api/torrent-downloads', {
+            const request: AddTorrentDownloadRequest = {
+                pageLink: link
+            };
+            const response = await fetch('http://localhost:4445/api/torrent-downloads', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(json),
+                body: JSON.stringify(request),
             });
 
-            if (addTorrent.status === 400) {
+            if (response.status === 400) {
                 setModalType(ModalTypeEnum.Warning);
-            } else if (!response || addTorrent.status === 500) {
+            } else if (!response || response.status === 500) {
                 setModalType(ModalTypeEnum.Error);
             } else {
                 setModalType(ModalTypeEnum.Success);

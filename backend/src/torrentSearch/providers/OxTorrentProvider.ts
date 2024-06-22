@@ -1,5 +1,5 @@
 import DownloadResponse from '../models/DownloadResponse.js';
-import GetResultResponse from '../models/GetResultResponse.js';
+import { GetResultResponse } from '@shared/GetResultResponse.js';
 import ITorrentProvider from './contracts/ITorrentProvider.js';
 
 class OxTorrentProvider implements ITorrentProvider {

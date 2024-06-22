@@ -3,20 +3,31 @@
         "target": "ES6",
         "module": "NodeNext",
         "moduleResolution": "NodeNext",
+        "strict": true,
+        "sourceMap": true,
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
         "outDir": "./dist",
         "rootDir": "./src",
-        "strict": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "sourceMap": true,
-        "forceConsistentCasingInFileNames": true,
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true
+        "emitDecoratorMetadata": true,
+        "paths": {
+            "@shared/*": [
+                "../shared/*"
+            ]
+        }
     },
     "include": [
         "src"
-    ],
+, "../shared/GetResultResponse.ts"    ],
     "exclude": [
         "node_modules"
+    ],
+    "references": [
+        { 
+            "path": "../shared"
+        }
     ]
 }

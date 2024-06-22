@@ -1,4 +1,4 @@
-export default interface GetResultResponse {
+export interface GetResultResponse {
     Title: string;
     Size: string;
     Seeders: number;

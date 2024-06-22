@@ -44,7 +44,13 @@ next-env.d.ts
 *.map.js
 *.js.map
 
-# Output directories
+# output directories
 dist/
 **/dist/
 build/
+
+# generated files
+*.js
+*.d.ts
+*.js.map*
+*.ts.map*

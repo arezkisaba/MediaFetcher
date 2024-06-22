@@ -2,7 +2,6 @@
     "name": "mediafetcher-frontend",
     "version": "0.1.0",
     "author": "Arezki Saba",
-    "license": "ISC",
     "description": "Small docker container with a torrent download api based on node.js server ",
     "private": true,
     "scripts": {

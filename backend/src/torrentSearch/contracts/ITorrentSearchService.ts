@@ -1,4 +1,4 @@
-import GetResultResponse from '../models/GetResultResponse.js';
+import { GetResultResponse } from '@shared/GetResultResponse.js';
 
 export default interface ITorrentSearchService {
     getResults(searchPattern: string): Promise<GetResultResponse[]>;
