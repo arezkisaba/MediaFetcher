@@ -1,7 +1,7 @@
 import { injectable } from 'tsyringe';
 import ITorrentSearchService from './contracts/ITorrentSearchService.js';
-import OxTorrentProvider from './providers/OxTorrentProvider.js'
-import ITorrentProvider from './providers/contracts/ITorrentProvider.js';
+import OxTorrentProvider from '../providers/OxTorrentProvider.js'
+import ITorrentProvider from '../providers/contracts/ITorrentProvider.js';
 import { GetTorrentSearchResultResponse } from 'shared/src/models/GetTorrentSearchResultResponse.js';
 
 @injectable()

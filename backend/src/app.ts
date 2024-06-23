@@ -1,7 +1,9 @@
 import express, { Application } from 'express';
 import cors from 'cors';
 import './container.js';
-import routes from './routes.js';
+import TorrentSearchRoutes from './torrentSearch/routes/TorrentSearchRoutes.js';
+import TorrentDownloadsRoutes from './torrentsDownloads/routes/TorrentDownloadsRoutes.js';
+import IPCheckMiddleware from './middlewares/IPCheckMiddleware.js';
 
 const app: Application = express();
 
@@ -12,6 +14,8 @@ app.use(cors({
     credentials: true,
     optionsSuccessStatus: 204
 }));
-app.use('/api', routes);
+app.use(IPCheckMiddleware);
+app.use('/api', TorrentSearchRoutes);
+app.use('/api', TorrentDownloadsRoutes);
 
 export default app;

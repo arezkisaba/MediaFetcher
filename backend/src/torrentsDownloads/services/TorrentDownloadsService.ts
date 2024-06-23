@@ -1,11 +1,11 @@
 import { GetTorrentDownloadResponse } from '@shared/src/models/GetTorrentDownloadResponse.js';
-import DictionaryCache from './DictionaryCache.js';
+import DictionaryCache from '../../utils/DictionaryCache.js';
 import WebTorrent from 'webtorrent';
 
 const client = new WebTorrent();
 const cache = new DictionaryCache();
 
-class TorrentService {
+class TorrentDownloadsService {
 
     async getTorrents() {
         const items = client.torrents.map(
@@ -52,4 +52,4 @@ class TorrentService {
     };
 }
 
-export default TorrentService;
+export default TorrentDownloadsService;

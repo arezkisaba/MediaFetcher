@@ -8,7 +8,7 @@ docker ps -a
 docker exec -it <containerid> bash
 
 # stop and remove a container + purge all
-docker stop <containerid>;docker rm <containerid>;docker system prune -a
+docker stop <containerid>; docker rm <containerid>;docker system prune -a
 
 # get logs for a container
 docker logs <containerid>

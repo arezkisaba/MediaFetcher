@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "compounds": [
         {
-            "name": "Development - Fullstack",
+            "name": "Development",
             "configurations": [
                 "Development - Backend",
                 "Development - Frontend"
@@ -13,16 +13,6 @@
         }
     ],
     "configurations": [
-        {
-            "name": "Development",
-            "type": "node-terminal",
-            "request": "launch",
-            "command": "npm run start",
-            "cwd": "${workspaceFolder}",
-            "skipFiles": [
-                "<node_internals>/**"
-            ]
-        },
         {
             "name": "Development - Backend",
             "type": "node-terminal",
