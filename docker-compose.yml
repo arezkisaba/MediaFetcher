@@ -1,26 +1,26 @@
 version: '3.8'
 services:
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    ports:
-      - ${PORT_BACKEND_HOSTSIDE}:${PORT}
-    environment:
-      - NODE_ENV=production
-    env_file:
-        - .env
-    volumes:
-        - ${DOWNLOAD_PATH_HOSTSIDE}:${DOWNLOAD_PATH}:rw
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    ports:
-      - ${PORT_FRONTEND_HOSTSIDE}:${PORT}
-    depends_on:
-      - backend
-    environment:
-      - NODE_ENV=production
-    env_file:
-        - .env
+    backend:
+        build:
+            context: ./
+            dockerfile: Dockerfile-backend
+        ports:
+            - ${PORT_BACKEND_HOSTSIDE}:${PORT}
+        environment:
+            - NODE_ENV=production
+        env_file:
+            - .env
+        volumes:
+            - ${DOWNLOAD_PATH_HOSTSIDE}:${DOWNLOAD_PATH}:rw
+    frontend:
+        build:
+            context: ./
+            dockerfile: Dockerfile-frontend
+        ports:
+            - ${PORT_FRONTEND_HOSTSIDE}:${PORT}
+        depends_on:
+            - backend
+        environment:
+            - NODE_ENV=production
+        env_file:
+            - .env

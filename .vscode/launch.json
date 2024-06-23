@@ -14,11 +14,21 @@
     ],
     "configurations": [
         {
+            "name": "Development",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "npm run start",
+            "cwd": "${workspaceFolder}",
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        },
+        {
             "name": "Development - Backend",
             "type": "node-terminal",
             "request": "launch",
-            "command": "npm start",
-            "cwd": "${workspaceFolder}/backend",
+            "command": "npm run start-backend",
+            "cwd": "${workspaceFolder}",
             "envFile": "${workspaceFolder}/backend/.env.development",
             "skipFiles": [
                 "<node_internals>/**"
@@ -28,8 +38,8 @@
             "name": "Development - Frontend",
             "type": "node-terminal",
             "request": "launch",
-            "command": "npm start",
-            "cwd": "${workspaceFolder}/frontend",
+            "command": "npm run start-frontend",
+            "cwd": "${workspaceFolder}",
             "envFile": "${workspaceFolder}/frontend/.env.development",
             "skipFiles": [
                 "<node_internals>/**"
