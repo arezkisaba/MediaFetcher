@@ -154,9 +154,9 @@ const SearchPage: React.FC = () => {
                                 </thead>
                                 <tbody className="bg-white divide-y divide-gray-200">
                                     {results.map((result) => (
-                                        <tr key={result.Link} className="relative">
+                                        <tr key={result.PageLink} className="relative">
                                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                <a href={result.Link} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-900">
+                                                <a href={result.PageLink} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-900">
                                                     {result.Title}
                                                 </a>
                                             </td>
@@ -164,11 +164,11 @@ const SearchPage: React.FC = () => {
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{result.Seeders}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{result.Leechers}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                <button onClick={() => handleDownload(result.Link)} className="text-indigo-600 hover:text-indigo-900">
+                                                <button onClick={() => handleDownload(result.PageLink)} className="text-indigo-600 hover:text-indigo-900">
                                                     <Download className="h-5 w-5" />
                                                 </button>
                                             </td>
-                                            <td className="absolute inset-x-0 bottom-0 h-2 bg-indigo-600" style={{ width: `${getProgress(result.Link)}%` }}></td>
+                                            <td className="absolute inset-x-0 bottom-0 h-2 bg-indigo-600" style={{ width: `${getProgress(result.PageLink)}%` }}></td>
                                         </tr>
                                     ))}
                                 </tbody>

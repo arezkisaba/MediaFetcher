@@ -1,6 +1,6 @@
 import ITorrentProvider from './contracts/ITorrentProvider.js';
 import DownloadResponse from '../models/DownloadResponse.js';
-import { GetTorrentSearchResultResponse } from 'shared/src/models/GetTorrentSearchResultResponse.js';
+import { GetTorrentSearchResultResponse } from '@shared/src/models/GetTorrentSearchResultResponse.js';
 
 class OxTorrentProvider implements ITorrentProvider {
     private baseUrl: string;
@@ -63,7 +63,7 @@ class OxTorrentProvider implements ITorrentProvider {
                     Size: size,
                     Seeders: seeders,
                     Leechers: leechers,
-                    Link: new URL(link, this.baseUrl).toString(),
+                    PageLink: new URL(link, this.baseUrl).toString(),
                 };
         
                 torrentList.push(torrent);

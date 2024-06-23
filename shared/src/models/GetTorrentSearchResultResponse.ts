@@ -3,5 +3,5 @@ export interface GetTorrentSearchResultResponse{
     Size: string;
     Seeders: number;
     Leechers: number;
-    Link: string;
+    PageLink: string;
 }

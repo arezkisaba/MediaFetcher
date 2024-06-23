@@ -1,5 +1,5 @@
 import DownloadResponse from '../../models/DownloadResponse.js';
-import { GetTorrentSearchResultResponse } from 'shared/src/models/GetTorrentSearchResultResponse.js';
+import { GetTorrentSearchResultResponse } from '@shared/src/models/GetTorrentSearchResultResponse.js';
 
 interface ITorrentProvider {
     getResults(searchPattern : string): Promise<GetTorrentSearchResultResponse[]>;

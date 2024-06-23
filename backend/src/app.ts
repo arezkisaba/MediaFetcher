@@ -1,9 +1,11 @@
 import express, { Application } from 'express';
+import swaggerUi from 'swagger-ui-express';
 import cors from 'cors';
 import './container.js';
 import TorrentSearchRoutes from './torrentSearch/routes/TorrentSearchRoutes.js';
 import TorrentDownloadsRoutes from './torrentsDownloads/routes/TorrentDownloadsRoutes.js';
 import IPCheckMiddleware from './middlewares/IPCheckMiddleware.js';
+import SwaggerSpec from './openapi/SwaggerSpec.js';
 
 const app: Application = express();
 
@@ -17,5 +19,6 @@ app.use(cors({
 app.use(IPCheckMiddleware);
 app.use('/api', TorrentSearchRoutes);
 app.use('/api', TorrentDownloadsRoutes);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(SwaggerSpec));
 
 export default app;
