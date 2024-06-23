@@ -4,6 +4,9 @@
 # list all docker containers
 docker ps -a
 
+# browse container filesystem
+docker exec -it <containerid> bash
+
 # stop and remove a container + purge all
 docker stop <containerid>;docker rm <containerid>;docker system prune -a
 

@@ -18,12 +18,8 @@ router.get('/torrent-search', async (req: Request, res: Response) => {
         const searchPattern = req.query.q as string;
         const results = await torrentSearchService.getResults(searchPattern);
         return res.json(results);
-    } catch (err) {
-        const error = err as HttpError;
-        res.status(error.status || 500).json({
-            status: error.status || 500,
-            message: error.message || 'Internal Server Error',
-        });
+    } catch (error) {
+        res.status(500).json(error);
     }
 });
 
@@ -47,12 +43,8 @@ router.post('/torrent-downloads', async (req: Request, res: Response) => {
         } else {
             res.status(201).json(result);
         }
-    } catch (err) {
-        const error = err as Error;
-        res.status(500).json({
-            status: 500,
-            message: error.message || 'Internal Server Error',
-        });
+    } catch (error) {
+        res.status(500).json(error);
     }
 });
 
